@@ -1,22 +1,21 @@
-package com.examly.springapp;
+package com.examly.springapp.springapp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.*;
 @RestController
 public class AppController {
     @Autowired
     Dao dao;
-    private List<Model> all=(List<Model>) dao.findAll();
+    private Model detail;
+    
     @PostMapping("/saveTask")
     public String saveTask(@RequestBody Model detail) {
+        this.detail = detail;
         dao.save(detail);
         return "Sucess";
     }
