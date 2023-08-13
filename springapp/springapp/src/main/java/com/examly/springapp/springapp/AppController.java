@@ -1,25 +1,22 @@
-package com.examly.springapp.springapp;
+package com.examly.springapp;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;  
 import java.util.*;
 @RestController
 public class AppController {
     @Autowired
     Dao dao;
-    private Model detail;
-    
     @PostMapping("/saveTask")
     public String saveTask(@RequestBody Model detail) {
-        this.detail = detail;
         dao.save(detail);
         return "Sucess";
     }
-    @GetMapping("/alltasks")
+    @GetMapping("/allTasks")
     List<Model> allTasks()
     {
         List<Model> all=(List<Model>) dao.findAll();
@@ -31,10 +28,8 @@ public class AppController {
         dao.deleteById(id);
     }
     @GetMapping("/getTask")
-    public ResponseEntity<Model> getTask(@RequestParam("id") Integer id){
+    public Model getTask(@RequestParam int id){
         Model a =dao.findById(id).orElse(null);
-        return ResponseEntity.ok(a);
-}
-
-
+        return a;
+    }
 }
