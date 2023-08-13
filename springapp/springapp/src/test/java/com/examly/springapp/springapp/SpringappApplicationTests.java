@@ -1,4 +1,4 @@
-package com.examly.springapp;
+package com.examly.springapp.springapp;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureMockMvc
 @RunWith(SpringRunner.class)
-public class SpringApplicationTests {
+public class SpringappApplicationTests {
 
 	@Autowired
     private MockMvc mockMvc;	
