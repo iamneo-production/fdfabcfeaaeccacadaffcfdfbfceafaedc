@@ -1,13 +1,3 @@
-package com.examly.springapp.springapp;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class SpringappApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringappApplication.class, args);
-	}
-
+public class Spr/home/coder/project/workspace/springapp/springapp/srcingappApplication {
+    
 }
