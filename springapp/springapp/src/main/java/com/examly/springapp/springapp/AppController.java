@@ -1,4 +1,4 @@
-package com.examly.springapp;
+package com.examly.springapp.springapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
